@@ -8,8 +8,4 @@ export default class Admin extends User {
     createCourse(course, amountOfVacancies) {
         return `Course ${course} created with ${amountOfVacancies} vacancies.`;
     }
-
-    displayName() {
-        return `${this.name}`;
-    }
 }

@@ -1,6 +1,6 @@
 export default class User {
     
-    // utilizando serquilha, ainda podemos ter problemas, pois a atribuição de um valor a uma propriedade que não existe cria essa propriedade. Por exemplo, newUser.name = "Márcio", criaria a prop. name.
+    // using only private attributes (#), we can still have problems, because assigning a value to a property that does not exist creates that property. For example, newUser.name = "Marcio", would create the prop. name.
     
     #name
     #email
@@ -12,24 +12,41 @@ export default class User {
         this.#name = name
         this.#email = email
         this.#birth = birth
-        this.#role = role || "estudante"
+        this.#role = role || "student"
         this.#active = active
     }
 
-    #returnsObject() {
-        return ({
-            name: this.#name,
-            email: this.#email,
-            birth: this.#birth,
-            role: this.#role,
-            active: this.#active,
+    // accessor methods are read-only
+    get name() {
+        return this.#name;
+    }
 
-        })
+    get email() {
+        return this.#email;
+    }
+
+    get birth() {
+        return this.#birth;
+    }
+
+    get role() {
+        return this.#role;
+    }
+
+    get active() {
+        return this.#active;
+    }
+
+    set name(newName) {
+        if (newName === "") {
+            throw new Error("Invalid name format")
+        }
+
+        this.#name = newName;
     }
 
     displayInformation() {
-        const objUser = this.#returnsObject();
-        return `Name: ${objUser.name}\nEmail: ${objUser.email}`;
+        return `Name: ${this.name}\nEmail: ${this.email}`;
     }
 }
 
