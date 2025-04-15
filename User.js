@@ -61,6 +61,11 @@ export default class User {
             return `Teacher: ${this.name}\nEmail: ${this.email}`;
         }
     }
+
+    // Static methods do not depend on instances or class constructors
+    static displayInformationGeneric(name, email) {
+        return `Name: ${name}\nEmail: ${email}`
+    }
 }
 
 // const newUser = new User("Allysson", "allysson@domain.com", "2025/01/01");
