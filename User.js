@@ -45,8 +45,21 @@ export default class User {
         this.#name = newName;
     }
 
+    // displayInformation() {
+    //     return `Name: ${this.name}\nEmail: ${this.email}`;
+    // }
+
+    // Overload = sobrecarga de método (muito acoplamento) *Ele não consegue usar a ASSINATURA DE FUNÇÃO
     displayInformation() {
-        return `Name: ${this.name}\nEmail: ${this.email}`;
+        if (this.role === "student") {
+            return `Student: ${this.name}`;
+        }
+        if (this.role === "admin") {
+            return `Admin: ${this.name}\nEmail: ${this.email}`;
+        }
+        if (this.role === "teacher") {
+            return `Teacher: ${this.name}\nEmail: ${this.email}`;
+        }
     }
 }
 
