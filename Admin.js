@@ -6,7 +6,7 @@ class Admin extends User {
     }
 
     createCourse(course, amountOfVacancies) {
-        console.log(`Course ${course} created with ${amountOfVacancies} vacancies`);
+        console.log(`Course ${course} created with ${amountOfVacancies} vacancies.`);
     }
 }
 
