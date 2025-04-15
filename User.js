@@ -8,9 +8,9 @@ export default class User {
     }
 
     displayInformation() {
-        console.log(`Name: ${this.name}\nEmail: ${this.email}`)
+        console.log(`Name: ${this.name}\nEmail: ${this.email}`);
     }
 }
 
-const newUser = new User("Allysson", "allysson@domain.com", "2000/01/01", "CISO", true)
-console.log(newUser.displayInformation());
+// const newUser = new User("Allysson", "allysson@domain.com", "2000/01/01", "estudante");
+// console.log(newUser.displayInformation());
